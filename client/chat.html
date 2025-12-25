@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat Realtime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💬 Chat Realtime với WebSocket</h1>
+            <div class="status-bar">
+                <span class="status-indicator" id="status-indicator"></span>
+                <span id="status-text">Đang kết nối...</span>
+                <span class="online-count" id="online-count"></span>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <!-- Messages sẽ được thêm vào đây bằng JS -->
+            </div>
+
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="name-input" 
+                    placeholder="Tên của bạn..."
+                    maxlength="50"
+                    autocomplete="off"
+                />
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    placeholder="Nhập tin nhắn..."
+                    maxlength="500"
+                    autocomplete="off"
+                />
+                <button id="send-button">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>

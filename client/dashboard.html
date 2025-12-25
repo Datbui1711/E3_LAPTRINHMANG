@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Dashboard Realtime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Dashboard Realtime với WebSocket</h1>
+            <div class="status-bar">
+                <span class="status-indicator" id="status-indicator"></span>
+                <span id="status-text">Đang kết nối...</span>
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <div class="controls">
+                <h3>⚙️ Chọn Metrics</h3>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" id="metric-temperature" value="temperature" checked>
+                        🌡️ Nhiệt độ (°C)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="metric-stock" value="stock" checked>
+                        📈 Giá cổ phiếu ($)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="metric-cpu" value="cpu" checked>
+                        💻 CPU Usage (%)
+                    </label>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card" id="card-temperature">
+                    <h3>🌡️ Nhiệt độ</h3>
+                    <div class="metric-value" id="value-temperature">--</div>
+                    <div class="metric-unit">°C</div>
+                    <div class="metric-time" id="time-temperature"></div>
+                    <canvas id="chart-temperature" width="300" height="100"></canvas>
+                </div>
+
+                <div class="metric-card" id="card-stock">
+                    <h3>📈 Giá cổ phiếu</h3>
+                    <div class="metric-value" id="value-stock">--</div>
+                    <div class="metric-unit">USD</div>
+                    <div class="metric-time" id="time-stock"></div>
+                    <canvas id="chart-stock" width="300" height="100"></canvas>
+                </div>
+
+                <div class="metric-card" id="card-cpu">
+                    <h3>💻 CPU Usage</h3>
+                    <div class="metric-value" id="value-cpu">--</div>
+                    <div class="metric-unit">%</div>
+                    <div class="metric-time" id="time-cpu"></div>
+                    <canvas id="chart-cpu" width="300" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
